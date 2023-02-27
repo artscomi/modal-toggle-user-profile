@@ -43,13 +43,13 @@ export const Modal: React.FC<{ onClose: VoidFunction }> = ({ onClose }) => {
   }, [size]);
 
   return (
-    <div className="overlay" onClick={onClose} tabIndex={0} role="button">
+    <div className="modal-overlay" onClick={onClose} tabIndex={0} role="button">
       <div
-        className="modalContent"
+        className="modal-content"
         tabIndex={0}
         onClick={(e) => e.stopPropagation()}
       >
-        <button className="close" onClick={onClose}>
+        <button className="modal-close" onClick={onClose}>
           <Close />
         </button>
         {isLoading ? (

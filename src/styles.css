@@ -4,6 +4,12 @@
   --grey: #eeeeee;
 }
 
+
+/*********
+  Common
+ *********/
+
+
 button {
   all: unset;
   cursor: pointer;
@@ -42,6 +48,10 @@ input {
   outline-offset: -2px;
 }
 
+/*********
+  App 
+ *********/
+
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -51,7 +61,11 @@ input {
   align-items: center;
 }
 
-.overlay {
+/*********
+  Modal 
+ *********/
+
+.modal-overlay {
   position: fixed;
   top: 0;
   right: 0;
@@ -64,7 +78,7 @@ input {
   align-items: center;
 }
 
-.modalContent {
+.modal-content {
   position: relative;
   min-height: 400px;
   min-width: 400px;
@@ -79,13 +93,7 @@ input {
   flex-direction: column;
 }
 
-.userList {
-  padding-top: 24px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.close {
+.modal-close {
   position: absolute;
   right: 16px;
   top: 16px;
@@ -93,7 +101,17 @@ input {
   font-size: 1.3rem;
 }
 
-.userItem {
+/*********
+  UserList 
+ *********/
+
+.user-list {
+  padding-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.user-item {
   flex: 0 0 20%;
   display: block;
   border: 1px solid var(--primary);
@@ -103,27 +121,31 @@ input {
   padding: 4px 8px;
 }
 
-.userItem:first-child,
-.userItem:nth-child(5n + 1) {
+.user-item:first-child,
+.user-item:nth-child(5n + 1) {
   border-top-left-radius: 4px;
   border-left: 1px solid var(--primary);
   border-bottom-left-radius: 4px;
 }
 
-.userItem:nth-child(5n) {
+.user-item:nth-child(5n) {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
 
-.userItem:last-child {
+.user-item:last-child {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
 
-.userItem.active {
+.user-item.active {
   background-color: var(--primary);
   color: var(--white);
 }
+
+/*********
+  CTA 
+ *********/
 
 .cta {
   background-color: var(--primary);
@@ -148,6 +170,10 @@ input {
   border-width: 3px;
 }
 
+/*********
+  Utility classes
+ *********/
+
 .displayBlock {
   display: block;
 }
@@ -160,16 +186,24 @@ input {
   margin-bottom: 16px;
 }
 
-.userProfilesWrapper {
+/*********
+  UserProfile
+ *********/
+
+.user-profiles-wrapper {
   min-height: 370px;
   background-color: var(--white);
   border-radius: 4px;
   box-shadow: 0px 1px 4px rgba(29, 29, 27, 0.24);
 }
 
-.userProfile {
+.user-profile {
   position: relative;
 }
+
+/*********
+  Loader and Skeleton
+ *********/
 
 .imageSkeleton {
   background: var(--grey);
@@ -186,12 +220,6 @@ input {
   display: none;
 }
 
-@keyframes shine {
-  to {
-    background-position-x: -200%;
-  }
-}
-
 .loader {
   width: 48px;
   height: 48px;
@@ -201,6 +229,16 @@ input {
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
+}
+
+/*********
+  keyframes
+ *********/
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
 }
 
 @keyframes rotation {

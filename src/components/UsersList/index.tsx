@@ -9,12 +9,12 @@ export const UsersList: React.FC<{
   const { users } = useUsers();
 
   return (
-    <div className="userList marginBottomM">
+    <div className="user-list marginBottomM">
       {users.map((user: User, index) => {
         return (
           <button
             key={index}
-            className={`userItem ${activeId === user.id ? "active" : ""}`}
+            className={`user-item ${activeId === user.id ? "active" : ""}`}
             onClick={() => getUserProfiles(user.id)}
           >
             <p>{user.first_name}</p>

@@ -14,11 +14,9 @@ export const UserProfile: React.FC<{
     return null;
   }
 
-  console.log("isLoaded", isLoaded);
-
   return (
-    <div className="userProfilesWrapper">
-      <div className="userProfile marginBottomM">
+    <div className="user-profiles-wrapper">
+      <div className="user-profile marginBottomM">
         <div className={isLoaded ? "imageLoaded" : "imageSkeleton"} />
         <img
           style={isLoaded ? { opacity: 1 } : { opacity: 0 }}
@@ -27,7 +25,6 @@ export const UserProfile: React.FC<{
           src={userProfile.avatar}
           alt=""
           onLoad={(e) => {
-            console.log(e.currentTarget);
             setLoaded(true);
           }}
         />
