@@ -82,33 +82,51 @@ input {
   min-width: 400px;
   padding: 56px 24px;
   background: var(--white);
-  max-height: 100vh;
-  max-width: 80vw;
+
   overflow-y: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 100vh;
+  width: 100vw;
 }
 
 .modal-close {
   position: absolute;
   right: 16px;
   top: 16px;
-  padding: 8px;
+  padding: 16px;
   font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*********
+  Form 
+ *********/
+
+.form {
+  padding-bottom: 40px;
+}
+
+.form_label {
+  display: block;
+  margin-bottom: 32px;
 }
 
 /*********
   UserList 
  *********/
 
-.user-list {
-  padding-top: 24px;
-}
-
 .user-list_row {
   display: flex;
+}
+
+.user-list_row:nth-child(2),
+.user-list_row:last-child {
+  margin-top: -1px;
 }
 
 .user-item {
@@ -117,19 +135,11 @@ input {
   border: 1px solid var(--primary);
   border-left: 0;
   box-sizing: border-box;
-  margin-bottom: 8px;
   padding: 4px 8px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   height: 60px;
-}
-
-@media only screen and (min-width: 769px) {
-  .user-item {
-    min-width: 100px;
-    width: auto;
-  }
 }
 
 .user-item:first-child {
@@ -179,16 +189,8 @@ input {
   Utility classes
  *********/
 
-.displayBlock {
-  display: block;
-}
-
 .marginAuto {
   margin: auto;
-}
-
-.marginBottomM {
-  margin-bottom: 16px;
 }
 
 /*********
@@ -196,7 +198,7 @@ input {
  *********/
 
 .user-profiles-wrapper {
-  min-height: 370px;
+  margin-top: 40px;
   background-color: var(--white);
   border-radius: 4px;
   box-shadow: 0px 1px 4px rgba(29, 29, 27, 0.24);
@@ -252,5 +254,23 @@ input {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+/*********
+  media queries
+ *********/
+
+@media only screen and (min-width: 769px) {
+  .user-item {
+    min-width: 100px;
+    width: auto;
+  }
+
+  .modal-content {
+    height: auto;
+    width: auto;
+    max-width: 90vw;
+    min-width: 45vw;
   }
 }

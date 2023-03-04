@@ -16,7 +16,7 @@ export const UserProfile: React.FC<{
 
   return (
     <div className="user-profiles-wrapper">
-      <div className="user-profile marginBottomM">
+      <div className="user-profile">
         <div className={isLoaded ? "imageLoaded" : "imageSkeleton"} />
         <img
           style={isLoaded ? { opacity: 1 } : { opacity: 0 }}
