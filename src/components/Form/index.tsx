@@ -1,14 +1,17 @@
-import React, { useState, Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction, useRef } from "react";
 
 export const Form: React.FC<{
   setSize: Dispatch<SetStateAction<number>>;
 }> = ({ setSize }) => {
-  const [value, setValue] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSize(parseInt(value, 0));
+    if(inputRef?.current?.value) {
+      setSize(parseInt(inputRef?.current.value));
+    }
   };
+
+  const inputRef = useRef<HTMLInputElement>(null);
 
   return (
     <>
@@ -17,10 +20,9 @@ export const Form: React.FC<{
           Set the number of users you want to display:
         </label>
         <input
+          ref={inputRef}
           placeholder=""
           type="number"
-          value={value}
-          onChange={(e) => setValue(e.currentTarget.value)}
           name="userSize"
           id="userSize"
         />
