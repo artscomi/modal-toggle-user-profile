@@ -1,42 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#  React Modal with toggle bar
 
-## Available Scripts
+This project is bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-In the project directory, you can run:
+This **React application** is a project created to fulfill specific requirements as an exercise:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-## Acceptance Criteria
 * on the start page there is a button
 * clicking this button should open a modal
-* data should be fetched when the modal is opened
-
-(fetch data from https://random-data-
-api.com/api/users/random_user?size={size})
-
+* data should be fetched when the modal is opened (fetch data from [this endpoint](https://random-data-api.com/api/users/random_user))
 * during the fetch request display a simple loading
-state (text is ok)
+state
 * in the modal window display the "profile" of a
 selected user, consisting of avatar, full name and email
 * in the modal window it is possible to configure the
@@ -53,7 +25,8 @@ the next-button is clicked
 a toggle bar
 * clicking a button on bar displays the appropriate
 profile
-## Nice to have:
+
+:candy: **Nice to have**:
 * the toggle bar should have multiple rows
 * each row should have up to 5 buttons
 * all rows except the last one should have the same
@@ -66,3 +39,19 @@ above (.e. 10 items => 5 5, 11 items => 4 4 3, 12 items
 screenshots provided)
 * The multi-row bar should have rounded corners on
 each row in the first and last buttons
+
+<br />
+<br />
+<img width="1012" alt="image" src="https://user-images.githubusercontent.com/59236081/222955378-aa15205f-e1d3-4dd1-8c68-4dff44892751.png">
+
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `yarn start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+
