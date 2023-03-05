@@ -2,11 +2,16 @@
   --primary: #3f334d;
   --white: #fefffe;
   --grey: #eeeeee;
+  --error: #eb5757;
 }
 
 /*********
   Common
  *********/
+
+p {
+  margin: 0;
+}
 
 button {
   all: unset;
@@ -107,18 +112,26 @@ input {
   Form 
  *********/
 
-.form {
-  padding-bottom: 40px;
-}
-
 .form_label {
   display: block;
   margin-bottom: 32px;
 }
 
+.error {
+  background-color: var(--error);
+  color: var(--white);
+  padding: 16px;
+  border-radius: 4px;
+  margin-top: 40px;
+}
+
 /*********
   UserList 
  *********/
+
+.user-list {
+  padding-top: 40px;
+}
 
 .user-list_row {
   display: flex;
@@ -206,6 +219,21 @@ input {
 
 .user-profile {
   position: relative;
+}
+
+.user-profile_image {
+  display: block;
+}
+
+.user-profile_info {
+  padding: 16px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.user-profile_name {
+  padding: 8px;
+  font-weight: bold;
 }
 
 /*********

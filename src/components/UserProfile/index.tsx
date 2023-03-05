@@ -19,6 +19,7 @@ export const UserProfile: React.FC<{
       <div className="user-profile">
         <div className={isLoaded ? "imageLoaded" : "imageSkeleton"} />
         <img
+          className="user-profile_image"
           style={isLoaded ? { opacity: 1 } : { opacity: 0 }}
           width={300}
           height={300}
@@ -29,8 +30,11 @@ export const UserProfile: React.FC<{
           }}
         />
 
-        <p>name: {userProfile.first_name} </p>
-        <p>surname: {userProfile.last_name} </p>
+        <div className="user-profile_info">
+          <p className="user-profile_name">
+            {`${userProfile.first_name} ${userProfile.last_name}`}
+          </p>
+        </div>
       </div>
     </div>
   );

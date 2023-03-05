@@ -57,13 +57,12 @@ export const Modal: React.FC<{ onClose: VoidFunction }> = ({ onClose }) => {
         ) : (
           <>
             <Form setSize={setSize} />
-
             <UsersList getUserProfiles={getUserProfiles} activeId={activeId} />
-
             <UserProfile userProfile={userProfiles} />
-
             {size > 20 && (
-              <p>You can select up to 20 users, please try again</p>
+              <div className="error">
+                <p>You can select up to 20 users, please try again</p>
+              </div>
             )}
           </>
         )}
