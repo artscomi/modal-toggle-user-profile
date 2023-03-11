@@ -28,4 +28,13 @@ describe("User flow", () => {
       cy.get('[data-cy="user-profile"]').contains(text).should('exist');
     });
   });
+
+
+  it('should display an error if the user set more than 20 users', () => {
+    cy.get("button").contains("Open modal").click();
+    cy.get("#userSize").type("22");
+    cy.contains("Submit").click();
+    cy.get('[data-cy="error"]')
+    cy.contains("You can select up to 20 users, please try again")
+  });
 });
