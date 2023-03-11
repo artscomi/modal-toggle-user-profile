@@ -26,6 +26,7 @@ export const UsersList: React.FC<{
         {users.map((user: User) => {
           return (
             <button
+              data-cy="user-tab"
               key={user.id}
               className={`user-item ${activeId === user.id ? "active" : ""}`}
               onClick={() => getUserProfiles(user.id)}
