@@ -15,7 +15,7 @@ export const UserProfile: React.FC<{
   }
 
   return (
-    <div className="user-profiles-wrapper">
+    <div className="user-profiles-wrapper" data-cy="user-profile">
       <div className="user-profile">
         <div className={isLoaded ? "imageLoaded" : "imageSkeleton"} />
         <img
