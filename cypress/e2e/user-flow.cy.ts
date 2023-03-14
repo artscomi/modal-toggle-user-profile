@@ -10,11 +10,18 @@ describe("User flow", () => {
     cy.get("dialog").should("not.exist");
   });
 
-  it("should display the right numbers of users", () => {
+  it("should display the right numbers of users on submit click", () => {
     cy.get("button").contains("Open modal").click();
-    cy.get("#userSize").type("12");
+    cy.get("#userSize").type("16");
     cy.contains("Submit").click();
-    cy.get("[data-cy='user-tab']").should("have.length", 12);
+    cy.get("[data-cy='user-tab']").should("have.length", 16);
+  });
+
+
+  it("should display the right numbers of users on submit enter", () => {
+    cy.get("button").contains("Open modal").click();
+    cy.get("#userSize").type('8{enter}');
+    cy.get("[data-cy='user-tab']").should("have.length", 8);
   });
 
 
@@ -22,9 +29,9 @@ describe("User flow", () => {
     cy.get("button").contains("Open modal").click();
     cy.get("#userSize").type("16");
     cy.contains("Submit").click();
-    cy.get('[data-cy="user-tab"]').first().as("userTab");
-    cy.get("@userTab").invoke('text').then((text) => {
-      cy.get("@userTab").click()
+    cy.get('[data-cy="user-tab"]').first().as("firstUserTab");
+    cy.get("@firstUserTab").invoke('text').then((text) => {
+      cy.get("@firstUserTab").click()
       cy.get('[data-cy="user-profile"]').contains(text).should('exist');
     });
   });
