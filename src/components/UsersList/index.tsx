@@ -41,9 +41,7 @@ export const UsersList: React.FC<{
 
   return (
     <div className="user-list">
-      {usersPerRow[0] && getButtonsPerRow(usersPerRow[0])}
-      {usersPerRow[1] && getButtonsPerRow(usersPerRow[1])}
-      {usersPerRow[2] && getButtonsPerRow(usersPerRow[2])}
+      {usersPerRow.map((_row, index) => getButtonsPerRow(usersPerRow[index]))}
     </div>
   );
 };

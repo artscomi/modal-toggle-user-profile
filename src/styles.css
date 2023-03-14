@@ -135,10 +135,6 @@ input {
 
 .user-list_row {
   display: flex;
-}
-
-.user-list_row:nth-child(2),
-.user-list_row:last-child {
   margin-top: -1px;
 }
 
