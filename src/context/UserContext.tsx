@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useMemo, useState } from "react";
 import { User } from "types.d";
 
 type UserContextType = {
@@ -9,19 +9,16 @@ type UserContextType = {
 export const UserContext = createContext<UserContextType>({} as any);
 
 export const UserProvider: React.FC<React.PropsWithChildren> = ({
-  children
+  children,
 }) => {
   const [users, setUsers] = useState<User[]>([]);
 
+  const contextValue = useMemo(() => {
+    return { users, setUsers };
+  }, [users, setUsers]);
+
   return (
-    <UserContext.Provider
-      value={{
-        users,
-        setUsers
-      }}
-    >
-      {children}
-    </UserContext.Provider>
+    <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>
   );
 };
 
