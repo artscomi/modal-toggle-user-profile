@@ -1,6 +1,6 @@
 describe("User flow", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000");
+    cy.visit("/");
   });
 
   it("open and close modal", () => {
@@ -14,14 +14,14 @@ describe("User flow", () => {
     cy.get("button").contains("Open modal").click();
     cy.get("#userSize").type("16");
     cy.contains("Submit").click();
-    cy.get("[data-cy='user-tab']").should("have.length", 16);
+    cy.getByCyId('user-tab').should("have.length", 16);
   });
 
 
   it("should display the right numbers of users on submit enter", () => {
     cy.get("button").contains("Open modal").click();
     cy.get("#userSize").type('8{enter}');
-    cy.get("[data-cy='user-tab']").should("have.length", 8);
+    cy.getByCyId('user-tab').should("have.length", 8);
   });
 
 
@@ -29,7 +29,7 @@ describe("User flow", () => {
     cy.get("button").contains("Open modal").click();
     cy.get("#userSize").type("16");
     cy.contains("Submit").click();
-    cy.get('[data-cy="user-tab"]').first().as("firstUserTab");
+    cy.getByCyId('user-tab').first().as("firstUserTab");
     cy.get("@firstUserTab").invoke('text').then((text) => {
       cy.get("@firstUserTab").click()
       cy.get('[data-cy="user-profile"]').contains(text).should('exist');
@@ -41,7 +41,7 @@ describe("User flow", () => {
     cy.get("button").contains("Open modal").click();
     cy.get("#userSize").type("22");
     cy.contains("Submit").click();
-    cy.get('[data-cy="error"]')
+    cy.getByCyId('error')
     cy.contains("You can select up to 20 users, please try again")
   });
 });
